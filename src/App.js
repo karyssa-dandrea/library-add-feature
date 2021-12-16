@@ -7,28 +7,21 @@ import BookDetail from './views/Books/BookDetail';
 function App() {
   // TODO: Add routes to books & views
   return (
-    <div className="App">
+    <main className="container">
       <h1>Library Catalog</h1>
       <BrowserRouter>
         <header>
-          <NavLink to="/" BookList="/" exact>
-            Book List
-          </NavLink>
-          <NavLink to="/" BookDetail="/" exact>
-            Book Detail
-          </NavLink>
+          <NavLink to="/books">Catalog</NavLink>
         </header>
         <Switch>
-          <Route path="/">
+          <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/books">
-            <BookList />
-          </Route>
-          <Route path="/books/:id" component={BookDetail}></Route>
+          <Route path="/books/:id" component={BookDetail} />
+          <Route path="/books" component={BookList} />
         </Switch>
       </BrowserRouter>
-    </div>
+    </main>
   );
 }
 
