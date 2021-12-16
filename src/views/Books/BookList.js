@@ -20,6 +20,7 @@ function BookList() {
 
   return (
     <ul className="book-list" aria-label="book list">
+      <Link to="/">&laquo; Back to Homepage</Link>;
       {books.map((book) => (
         <li key={book.book_id}>
           <Link key={book.book_id} to={`/books/${book.book_id}`}>
